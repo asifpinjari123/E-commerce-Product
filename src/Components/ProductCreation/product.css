@@ -1,0 +1,36 @@
+
+/* Add table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style the buttons */
+  button {
+    margin-right: 10px;
+  }
+  
+  /* Style the dialogs */
+  .MuiDialog-paper {
+    /* Add your dialog styles here */
+  }
+  
+  /* Style the input fields */
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+  }
+  
