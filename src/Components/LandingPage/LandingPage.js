@@ -58,7 +58,6 @@ const landingPageStyles = {
 
 function LandingPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,7 +67,6 @@ function LandingPage() {
     return () => clearInterval(timer);
   }, []);
 
- 
   return (
     <Box>
       <CssBaseline />
@@ -80,7 +78,7 @@ function LandingPage() {
         />
         <Paper elevation={3} style={landingPageStyles.content}>
           <Typography component="h1" variant="h3">
-            Welcome to our Product Management System 
+            Welcome to our Product Management System
           </Typography>
           <Typography variant="body1">
             Explore and add your favorite products. Please sign up to get started.

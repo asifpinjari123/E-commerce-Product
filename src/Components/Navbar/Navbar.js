@@ -29,7 +29,7 @@ const navbarStyles = {
     color: 'white',
   },
   dialog: {
-    width: 600,
+    width: '100%', // Full width for responsiveness
     textAlign: 'center',
     margin: 'auto',
     marginTop: 100,
@@ -39,15 +39,9 @@ const navbarStyles = {
   form: {
     display: 'flex',
     flexDirection: 'column',
-    with:'100%',
-    height:'100%',
-    margin:'40px',
-    paddingRight:"23px"
   },
   formField: {
     margin: '8px',
-    height:"100%",
-    width:"100%"
   },
   signupDialog: {
     marginLeft: 20,
@@ -58,13 +52,14 @@ const navbarStyles = {
   },
   snackbarSuccess: {
     backgroundColor: 'green',
-    color: 'green'
+    color: 'green',
   },
   snackbarError: {
     backgroundColor: 'red',
-    color: 'red'
+    color: 'red',
   },
 };
+
 
 function Navbar() {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -174,14 +169,13 @@ function Navbar() {
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
-
   return (
     <div>
       <AppBar position="static" style={navbarStyles.appBar}>
         <CssBaseline />
         <Toolbar>
           <Typography variant="h6" style={navbarStyles.title}>
-            <img src={LOGO}  alt='logo'/>
+            <img src={LOGO} alt="logo" />
           </Typography>
           {user ? (
             <>
@@ -205,7 +199,7 @@ function Navbar() {
         </Toolbar>
       </AppBar>
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Dialog open={loginOpen} onClose={handleLoginClose} style={navbarStyles.dialog}>
             <DialogTitle>Login</DialogTitle>
             <DialogContent>
@@ -239,7 +233,7 @@ function Navbar() {
             </DialogActions>
           </Dialog>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Dialog open={signupOpen} onClose={handleSignupClose} style={navbarStyles.dialog}>
             <DialogTitle>Signup</DialogTitle>
             <DialogContent>
@@ -304,3 +298,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
