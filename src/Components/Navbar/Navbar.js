@@ -125,13 +125,16 @@ function Navbar() {
       setSnackbarMessage('Please fill in all the fields.');
       setSnackbarType('error');
       setSnackbarOpen(true);
-    } else if (username !== user.username || password !== user.password) {
-      setSnackbarMessage('Login failed. Please check your credentials.');
-      setSnackbarType('error');
-      setSnackbarOpen(true);
-    } else {
+    } else if (user && username === user.username && password === user.password) {
+      // Successful login logic here
       setUser(user);
       handleLoginClose();
+     
+    } else {
+      setSnackbarMessage('Login failed. Please check your credentials.');
+       clearFields(); // Clear input fields
+      setSnackbarType('error');
+      setSnackbarOpen(true);
     }
   };
 
@@ -178,7 +181,7 @@ function Navbar() {
         <CssBaseline />
         <Toolbar>
           <Typography variant="h6" style={navbarStyles.title}>
-            <img src={LOGO} />
+            <img src={LOGO}  alt='logo'/>
           </Typography>
           {user ? (
             <>

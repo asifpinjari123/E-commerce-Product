@@ -18,6 +18,7 @@ import {
   MenuItem
 } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductListing = () => {
   const [products, setProducts] = useState([]);
@@ -27,6 +28,11 @@ const ProductListing = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [addProductDialogOpen, setAddProductDialogOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+   // Get the user data from local storage
+   const user = JSON.parse(localStorage.getItem('user'));
+   const navigate = useNavigate();
+
 
   const handleValidationErrorClose = () => {
     setValidationError(false);
@@ -168,7 +174,13 @@ const ProductListing = () => {
         .catch((error) => console.error('Error deleting product:', error));
     }
   };
+  useEffect(() => {
+    if (!user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
 
+  
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
