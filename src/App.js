@@ -6,15 +6,16 @@ import ProductCreation from './Components/ProductCreation/ProductCreation';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  
   
 
   // Check for a logged-in user in local storage
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
+     
       setLoggedIn(true);
-      setUsername(storedUser);
+     
     }
   }, []);
 
