@@ -174,13 +174,11 @@ const ProductListing = () => {
         .catch((error) => console.error('Error deleting product:', error));
     }
   };
-  useEffect(() => {
+ useEffect(() => {
     if (!user) {
       navigate('/');
     }
   }, [user, navigate]);
-
-  
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())

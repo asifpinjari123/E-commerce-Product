@@ -174,29 +174,29 @@ function Navbar() {
       <AppBar position="static" style={navbarStyles.appBar}>
         <CssBaseline />
         <Toolbar>
-          <Typography variant="h6" style={navbarStyles.title}>
-            <img src={LOGO} alt="logo" />
-          </Typography>
-          {user ? (
-            <>
-              <Typography variant="body1" color="inherit">
-                Welcome, {user.username}
-              </Typography>
-              <Button style={navbarStyles.button} onClick={handleLogout}>
-                Logout
-              </Button>
-            </>
-          ) : (
-            <>
-              <Button style={navbarStyles.button} onClick={handleLoginClick}>
-                Login
-              </Button>
-              <Button style={navbarStyles.button} onClick={handleSignupClick}>
-                Signup
-              </Button>
-            </>
-          )}
-        </Toolbar>
+  <Typography variant="h6" style={navbarStyles.title}>
+    <img src={LOGO} alt="logo" style={{ height: '40px' }} />
+  </Typography>
+  {user ? (
+    <>
+      <Typography variant="body1" color="inherit" style={{ textAlign: 'center' }}>
+        Welcome, {user.username}
+      </Typography>
+      <Button style={navbarStyles.button} onClick={handleLogout}>
+        Logout
+      </Button>
+    </>
+  ) : (
+    <>
+      <Button style={navbarStyles.button} onClick={handleLoginClick}>
+        Login
+      </Button>
+      <Button style={navbarStyles.button} onClick={handleSignupClick}>
+        Signup
+      </Button>
+    </>
+  )}
+</Toolbar>
       </AppBar>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
